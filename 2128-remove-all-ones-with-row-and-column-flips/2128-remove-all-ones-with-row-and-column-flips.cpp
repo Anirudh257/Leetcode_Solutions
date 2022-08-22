@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool removeOnes(vector<vector<int>>& grid) {
+        // Time complexity: O(n*m), Space complexity: O(1)
         int m = grid.size(), n = grid[0].size();
         
         for (int i = 0; i < m; i++) {
