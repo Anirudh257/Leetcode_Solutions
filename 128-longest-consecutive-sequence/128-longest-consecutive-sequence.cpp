@@ -6,6 +6,8 @@ public:
         for (int n : nums) {
             hashSet.insert(n);
         }
+        
+        // Time complexity: O(n), Space complexity: O(n)
         int longStreak = 0;
         
         for (int n : nums) {
