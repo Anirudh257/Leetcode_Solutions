@@ -11,30 +11,15 @@
  */
 class Solution {
 public:
-    // Time complexity: O(N), Space complexity: O(1)
     int longestConsecutive(TreeNode* root) {
-        int longStreak = 1;
-        
-        longStreak = max(compStreak(root, root->left, 1, longStreak), compStreak(root, root->right, 1, longStreak));
-        
-        
-        return longStreak;
+        return compStreak(root, nullptr, 0);
     }
 private:
-    int compStreak(TreeNode* prev, TreeNode* curr, int currStreak, int longStreak) {
+    int compStreak(TreeNode* curr, TreeNode* prev, int currLen) {
         if (!curr) {
-            return longStreak = max(longStreak, currStreak);
+            return currLen;
         }
-        
-        if (curr->val == prev->val + 1) {
-            longStreak = max(currStreak + 1, longStreak);
-            currStreak = max(compStreak(curr, curr->left, currStreak + 1, longStreak), compStreak(curr, curr->right, currStreak + 1, longStreak));
-        }
-        else {
-            currStreak = max(compStreak(curr, curr->left, 1, longStreak), compStreak(curr, curr->right, 1, longStreak));
-
-        }
-        
-        return longStreak = max(longStreak, currStreak);
+        currLen = (prev && curr->val == prev->val + 1) ? currLen + 1 : 1;
+        return max(currLen, max(compStreak(curr->left, curr, currLen), compStreak(curr->right, curr, currLen)));
     }
 };
