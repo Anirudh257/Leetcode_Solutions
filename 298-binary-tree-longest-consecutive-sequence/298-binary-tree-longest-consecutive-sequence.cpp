@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    // Time complexity: O(N), Space complexity: O(1)
     int longestConsecutive(TreeNode* root) {
         int longStreak = 1;
         
