@@ -1,6 +1,7 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
+       // Time complexity: O(N), Space complexity: O(N)
         unordered_set<int> hashSet;
         
         for (int n : nums) {
