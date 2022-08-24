@@ -8,24 +8,18 @@ public:
         
         int l = 0, r = 0;
         
-        vector<int> counts(256, -1);
+        vector<int> counts(128, -1);
         
         
         while(r < len) {
             char ch = s[r];
             
-            // if (counts.find(ch) != counts)
             int ind = counts[ch];
             
             if (ind != -1 && ind >= l && ind < r) {
                 l = ind + 1;
             }
             
-            // while(counts[ch] > 1) {
-            //     char ch = s[l];
-            //     l++;
-            //     counts[ch]--;
-            // } 
             
             subLen = max(subLen, r - l + 1);
             
