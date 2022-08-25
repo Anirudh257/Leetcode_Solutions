@@ -5,7 +5,8 @@ public:
         int wordLen = word.length();
         
         // Time complexity: O(m*n*dfs(len(word))), Space complexity: O(m*n)
-        
+        // 4 as we have 4 possible directions to go for each character
+
         vector<vector<bool>> visited(m, vector<bool>(n, false));
         
         for (int i = 0; i < m; i++) {
