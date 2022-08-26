@@ -1,6 +1,7 @@
 class Solution {
 public:
     int numDecodings(string s) {
+        // Time complexity: O(n), Space complexity: O(n)
         int len = s.length();
         vector<int> dp(len + 1);
         
