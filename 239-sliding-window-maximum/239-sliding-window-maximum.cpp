@@ -14,6 +14,9 @@ public:
 
     
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        
+        // Time complexity: O(n^2), Space complexity: O(n)
+        
         int size = nums.size();
         vector<int> maxVals;
         
