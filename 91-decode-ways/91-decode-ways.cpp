@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(N), Space complexity: O(N) + Auxiliary space: O(N)
     int numDecodings(string s) {
         return compRec(s, 0);
     }
