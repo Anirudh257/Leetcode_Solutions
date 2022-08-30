@@ -18,20 +18,20 @@ public:
         }
         
         
-        return checkVal(root->left, LONG_MIN, (long)root->val, root) && checkVal(root->right, (long)root->val, LONG_MAX, root);
+        return checkVal(root, nullptr, nullptr);
     }
 private:
-    bool checkVal(TreeNode* curr, long minLim, long maxLim, TreeNode* par) {
+    bool checkVal(TreeNode* curr, TreeNode* low, TreeNode* high) {
         if (!curr) {
             return true;
         }
-
-        if (minLim >= curr->val || curr->val >= maxLim) {
+        
+        if ((low != nullptr && curr->val <= low->val) || (high != nullptr && curr->val >= high->val)) {
             return false;
-        }            
+        }        
 
         
-        return checkVal(curr->left, minLim ,curr->val, curr) && checkVal(curr->right, curr->val, maxLim, curr);
+        return checkVal(curr->left, low, curr) && checkVal(curr->right, curr, high);
         
         
     }
