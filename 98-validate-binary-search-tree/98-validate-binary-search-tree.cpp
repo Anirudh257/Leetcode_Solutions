@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    // Time complexity: O(n), Space complexity: Auxiliary space: O(n), n = no. of nodes.
     bool isValidBST(TreeNode* root) {
         if (!root || !root->left && !root->right) {
             return true;
