@@ -1,27 +1,48 @@
 class Solution {
 public:
-    int mod=1e9+7;
-    int func(string &s,int i,int n,vector<int> &dp){
-        if(i>=n)return 1;
-        if(dp[i]!=-1)return dp[i];
-        int ans=0;
-        if(i+1<n && s[i]==s[i+1]){
-            ans+=func(s,i+2,n,dp);
-            ans=ans%mod;
-            if(i+2<n && s[i]==s[i+2]){
-                ans+=func(s,i+3,n,dp);
-                ans=ans%mod;
-                if(i+3<n && s[i]==s[i+3] && (s[i]=='9' || s[i]=='7'))ans+=func(s,i+4,n,dp);
-                ans=ans%mod;
+    int countTexts(string pressedKeys) {
+        int n = pressedKeys.length();
+        vector<int> dp(n + 1, -1);
+        
+        // Time complexity: O
+        
+        return countPoss(pressedKeys, dp, 0, n);
+    }
+private:
+    int mod = 1e9 + 7;
+    int countPoss(string& s, vector<int>& dp, int ind, int n) { 
+        if (ind >= n) {
+            return 1;
+        }
+        
+        if (dp[ind] != -1) {
+            return dp[ind];
+        }
+        
+        int ans = 0;
+        
+        // decode 2 characters at a time: (22)/(23)
+        if (ind + 1 < n && s[ind] == s[ind + 1]) {
+            ans += countPoss(s, dp, ind + 2, n);
+            ans %= mod;
+            
+            // decode 3 characters at a time: (223)/(222)
+            if (ind + 2 < n && s[ind] == s[ind + 2]) {
+                ans += countPoss(s, dp, ind + 3, n);
+                ans%=mod;
+                
+                // decode 4 characters at a time: (2222)/(2223)
+                if ((ind + 3 < n && s[ind] == s[ind + 3]) && (s[ind] == '7' || s[ind] == '9')) {
+                    ans += countPoss(s, dp, ind + 4, n);
+                    ans%= mod;
+                } 
             }
         }
-        ans+=func(s,i+1,n,dp);
-        ans=ans%mod;
-        return dp[i]=ans;
-    }
-    int countTexts(string s) {
-        int n=s.length();
-        vector<int> dp(n+1,-1);
-        return func(s,0,n,dp);
+        
+        // decode 1 character at a time: (2)/(3)
+        ans += countPoss(s, dp, ind + 1, n);
+        ans%=mod;
+        
+        return dp[ind] = ans;
     }
 };
