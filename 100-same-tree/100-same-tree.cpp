@@ -12,6 +12,7 @@
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
+        // Time complexity: O(N), Space complexity: Auxiliary space: O(N)
         if (!p && !q) {
             return true;
         }
