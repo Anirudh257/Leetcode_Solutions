@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    // Time complexity: O(N), Space complexity: O(N)
     int maxDepth(TreeNode* root) {
         if (!root) {
             return 0;
