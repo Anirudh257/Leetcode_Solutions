@@ -1,6 +1,7 @@
 class Solution {
 public:
     int countTexts(string pressedKeys) {
+        // Time complexity: O(N), Space complexity: O(N)
         int n = pressedKeys.length();
         vector<int> dp(n + 1, -1);
         
