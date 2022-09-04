@@ -1,6 +1,7 @@
 class Solution {
 public:
     int reachNumber(int target) {
+        // Time complexity: O(log(target)), Space complexity: O(1)
         int numSteps = 0, currSum = 0;
         
         if (target == 0) {
