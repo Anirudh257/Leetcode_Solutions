@@ -1,23 +1,17 @@
 class Solution {
 public:
     bool checkDistances(string s, vector<int>& distance) {
-        // Time complexity: O(n), Space complexity: O(n)
+        int pos[26] = {};
         
-        unordered_map<char, int> chInd;
-        
-        int len = s.size();
-        for (int i = 0; i < len; i++) {
-            char ch = s[i];
-            if (chInd.find(ch) != chInd.end()) {
-                int dist = abs(chInd[ch] - i) - 1;
-                int chInd = ch - 'a';
-                if (dist != distance[chInd]) {
-                    return false;
-                }
+        for (int i = 0; i < s.size(); i++) {
+            int ind = s[i] - 'a';
+            
+            if (pos[ind] > 0 && distance[ind] != abs(i - pos[ind])) {
+                return false;
             }
-            chInd[ch] = i;
+            pos[ind] = i + 1;
+            
         }
-        
         return true;
     }
 };
