@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(mn), m = positions = 4000, n = number of steps = 1000, Space complexity: O(mn)
     int numberOfWays(int startPos, int endPos, int k) {
         for (int i = 0; i < 3001; i++) {
             for (int j = 0; j < 1001; j++) {
