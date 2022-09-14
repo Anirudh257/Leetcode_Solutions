@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(n), Space complexity: O(1)
     int maximumDifference(vector<int>& nums) {
        int maxDiff = -1;
        int minVal = nums[0]; 
