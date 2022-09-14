@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    // Time complexity: O(n), Space complexity: O(n)
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         unordered_map<int, int> inMap;
         int len = inorder.size();
