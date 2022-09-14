@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
+        // Time complexity: O(N), Space complexity: O(1)
         int maxSum = INT_MIN;
         int size = nums.size();
         int curSum = 0;
