@@ -2,6 +2,7 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
         int len = prices.size();
+        // Time complexity: O(nx2), Space complexity: O(nx2) + Auxiliary Stack Space O(N)
         vector<vector<int>> dp(len, vector<int>(2, -1));
         
         return compProf(prices, 0, len, dp,  true);   
