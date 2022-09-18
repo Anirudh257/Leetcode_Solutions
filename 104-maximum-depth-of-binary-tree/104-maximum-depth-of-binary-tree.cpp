@@ -16,16 +16,14 @@ public:
         if (!root) {
             return 0;
         }
-        return max(compDepth(root->left, 1), compDepth(root->right, 1));
+       return max(compDepth(root->left, 1), compDepth(root->right, 1)); 
     }
-    
-    // f(9, 1) -> 2
-    // f(20, 1) -> f(15, 2) -> NULL
 private:
-    int compDepth(TreeNode* node, int lev) {
+    int compDepth(TreeNode* node, int depth) {
         if (!node) {
-            return lev;
+            return depth;
         }
-        return max(compDepth(node->left, lev + 1), compDepth(node->right, lev + 1));
+       return max(compDepth(node->left, depth + 1), compDepth(node->right, depth + 1)); 
+        
     }
 };
