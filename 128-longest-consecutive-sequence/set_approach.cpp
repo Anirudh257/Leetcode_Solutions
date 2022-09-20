@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        // Time complexity: O(N), Space complexity: O(1)
+        // Time complexity: O(N), Space complexity: O(N)
         unordered_set<int> hSet(nums.begin(), nums.end());
         int maxLen = 0;
         
