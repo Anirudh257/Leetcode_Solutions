@@ -1,26 +1,29 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-       // Time complexity: O(N), Space complexity: O(N)
-        unordered_set<int> hashSet;
+        // Time complexity: O(n), Space complexity: O(n)
+        int maxConsLen = 0;
+        unordered_map<int, int> um;
         
         for (int n : nums) {
-            hashSet.insert(n);
+            um[n] = 1;
         }
-        int longStreak = 0;
         
-        for (int n : nums) {
-            if (!hashSet.count(n - 1)) {
-                int currStreak = 1;
-                
-                while(hashSet.count(n + 1)) {
-                    currStreak++;
-                    n++;
+        for (int num : nums) {
+            if (um.count(num - 1)) {
+                continue;
+            }
+            else {
+                int currLen = 0;
+                int curr = num;
+                while(um.count(curr)) {
+                    currLen++;
+                    curr++;
                 }
-                longStreak = max(longStreak, currStreak);
+                maxConsLen = max(currLen, maxConsLen);
             }
         }
         
-        return longStreak;
+        return maxConsLen;
     }
 };
