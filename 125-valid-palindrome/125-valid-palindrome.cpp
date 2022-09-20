@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
+       // Time complexity: O(N), Space complexity: O(N)
         string newS = "";
         // char ch = 'Z';
         // char newCh = toLow(ch);
