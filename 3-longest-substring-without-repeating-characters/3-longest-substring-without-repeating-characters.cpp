@@ -1,6 +1,7 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
+        // Time complexity: O(N), Space complexity: O(N)
         int l = 0, r = 0;
         int len = s.size();
         unordered_map<char, int> chInd;
