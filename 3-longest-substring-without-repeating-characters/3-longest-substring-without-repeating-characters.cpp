@@ -13,12 +13,8 @@ public:
                 if (l <= chInd[right]) {
                     l = chInd[right] + 1;
                 }
-                chInd[right] = r;
-
             }
-            else {
-                chInd[right] = r;
-            }
+            chInd[right] = r;
             maxLen = max(maxLen, r - l + 1);
             r++;
         }
