@@ -4,13 +4,14 @@ public:
         // Time complexity: O(N), Space complexity: O(N)
         int l = 0, r = 0;
         int len = s.size();
-        unordered_map<char, int> chInd;
+        // unordered_map<char, int> chInd;
+        vector<int> chInd(256, -1);
         int maxLen = 0;
         
         while(r < len) {
             char right = s[r];
             
-            if (chInd.find(right) != chInd.end()) {
+            if (chInd[right] != -1) {
                 if (l <= chInd[right]) {
                     l = chInd[right] + 1;
                 }
