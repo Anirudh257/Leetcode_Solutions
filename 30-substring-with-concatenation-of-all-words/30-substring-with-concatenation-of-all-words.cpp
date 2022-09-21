@@ -3,6 +3,7 @@ public:
     vector<int> findSubstring(string s, vector<string>& words) {
         unordered_map<string, int> counts;
         
+        // Time complexity: O(a + n*b), a = numWords, b = wordSz, Space complexity: O(a + b)
         int numWords = words.size();
         int wordSz = words[0].size();
         int sLen = s.length();
