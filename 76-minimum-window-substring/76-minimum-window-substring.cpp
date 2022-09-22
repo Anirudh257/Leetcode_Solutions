@@ -1,42 +1,55 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
-        // Time complexity: O(|s| + |t|), Space complexity: O(1)
+        int tLen = t.length(), sLen = s.length();
         
-        vector<int> hMap(128, 0); // signifying lowercase + uppercase character locations
+        if (tLen > sLen) {
+            return "";
+        }
+        int l = 0, r = 0, minSubLen = INT_MAX;
+        int reqL = 0, reqR = 0;
         
-        int sLen = s.length(), reqLen = t.size();
+        unordered_map<char, int> needMap;
         
         for (char ch : t) {
-            hMap[ch]++;
+            needMap[ch]++;
         }
         
-        
-        int minSt = -1, minLen = INT_MAX, st = 0;
-        int r = 0, l = 0;
+        int need = needMap.size();
+        int have = 0;
+        unordered_map<char, int> haveMap;
         
         while(r < sLen) {
-            // Expand window as it is applicable
-            char ch = s[r++];
+            char ch = s[r];
             
-            if (--hMap[ch] >= 0) {
-                reqLen--;
-            }
-            while(reqLen == 0) {
-                // Contract window till it is applicable
-                if (r - l < minLen) {
-                    minLen = r - l;
-                    minSt = l;
+            if (needMap.find(ch) != needMap.end()) {
+                haveMap[ch]++;
+                
+                if (haveMap[ch] == needMap[ch]) {
+                    have++;
                 }
                 
-                char ch = s[l++];
-                hMap[ch]++;
-                if (hMap[ch] > 0) {
-                    reqLen++;
+                while (have == need) {
+                    char ch = s[l];
+                    
+                    if (haveMap.find(ch) != haveMap.end()) {
+                        haveMap[ch]--;
+                        
+                        if (haveMap[ch] < needMap[ch]) {
+                            have--;
+                        }
+                    }
+                    if (minSubLen > r - l + 1) {
+                        reqL = l;
+                        reqR = r;
+                        minSubLen = r - l + 1;
+                    }
+                    l++;
                 }
             }
+            r++;
         }
-                
-        return minLen != INT_MAX ? s.substr(minSt, minLen) : "";
+        // cout << l << "  " << r << endl;
+        return minSubLen == INT_MAX ? "" : s.substr(reqL, reqR - reqL + 1);   
     }
 };
