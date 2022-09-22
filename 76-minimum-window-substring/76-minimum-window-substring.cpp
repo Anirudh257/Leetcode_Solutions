@@ -1,6 +1,7 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
+        // Time complexity: O(|s| + |t|), Space complexity: O(|s| + |t|)
         int tLen = t.length(), sLen = s.length();
         
         if (tLen > sLen) {
