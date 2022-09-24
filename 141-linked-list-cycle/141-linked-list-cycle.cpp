@@ -13,16 +13,12 @@ public:
             return false;
         }
         // Time complexity: O(N), Space complexity: O(1)
-        // cout << " Here" << endl;
         
         ListNode* slow = head; 
         ListNode* fast = head->next;
         
-        // cout << slow->val << " " << fast->val << endl;
-        // cout << !slow << " " << !fast << endl;
         while(slow && fast) {
             slow = slow->next;
-            // cout << " here" << endl;
             if (fast->next) {
                 fast = fast->next->next;
             }
@@ -30,7 +26,6 @@ public:
                 return false;
             }
             
-            // cout << slow->val << " " << fast->val << endl;
             
             if (slow == fast) {
                 return true;
