@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
+        
+        // Time complexity: O(n^3), Space complexity: O(n) + Auxiliary stack space of O(n)
         unordered_set<string> hashSet;
         for (auto &x : wordDict) {
             hashSet.insert(x);
