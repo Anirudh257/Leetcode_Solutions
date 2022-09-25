@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
-        // Time 
+        // Time complexity: O(N), Space complexity: O(1)
         int maxSum = 0;
         int l = 0, r = 0, minLen = INT_MAX;
         int len = nums.size();
