@@ -2,7 +2,7 @@ class Solution {
 public:
     int findMin(vector<int>& nums) {
         int size = nums.size();
-        
+        // Time complexity: O(log n), Space complexity: O(1)
         if (nums[0] < nums[size - 1]) {
             return nums[0];
         }
