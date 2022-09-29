@@ -1,6 +1,8 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
+        
+        // Time complexity: O(n), Space complexity: O(1)
         int size = nums.size();
         int maxProd = nums[0];
         int currMin = 1, currMax = 1;
