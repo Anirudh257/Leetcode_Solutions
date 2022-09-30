@@ -2,7 +2,8 @@ class Solution {
 public:
     int findNumbers(vector<int>& nums) {
         int res = 0;
-        
+        // Time complexity: O(n^2)
+        // Space complexity: O(1)
         // cout << numDig(34343);
         for (int n : nums) {
             if (numDig(n) % 2 == 0) {
