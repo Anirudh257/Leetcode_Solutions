@@ -10,6 +10,8 @@ class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
         
+        
+        // Time complexity: O(N), Space complexity: O(1)
         if (!head || !head->next) {
             return nullptr;
         }
