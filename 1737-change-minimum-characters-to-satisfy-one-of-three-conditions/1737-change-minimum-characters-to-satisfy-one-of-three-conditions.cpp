@@ -1,6 +1,8 @@
 class Solution {
 public:
      int minCharacters(string a, string b) {
+         
+           // Time complexity: O(aLen + bLen), Space complexity: O(26)
            int aLen = a.length(), bLen = b.length(), res = aLen + bLen;
            vector<int> freqA(26), freqB(26);
 
