@@ -1,7 +1,7 @@
 class Solution {
 public:
     int openLock(vector<string>& deadends, string target) {
-        // Time complexity: 
+        // Time complexity: O(N^2*A^N + D), N = 4 (number of dials), A = number of alphabets(10), D = number of deadends
         
         unordered_set<string> deadSet(deadends.begin(), deadends.end());
         
