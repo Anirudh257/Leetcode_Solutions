@@ -1,6 +1,8 @@
 class Solution {
 public:
     uint32_t reverseBits(uint32_t n) {
+        
+        // Time complexity: O(N), Space complexity: O(1)
         string binRep = compBinRep(n);
         
         cout << binRep << endl;
