@@ -1,76 +1,71 @@
 class Solution {
 public:
-    bool backtrack(vector<int>& arr, int index, int count, int currSum, int k, 
-                   int targetSum, string& taken, unordered_map<string, bool>& memo) {
-
-        int n = arr.size();
-      
-        // We made k - 1 subsets with target sum and last subset will also have target sum.
-        if (count == k - 1) { 
+    bool canPartitionKSubsets(vector<int>& nums, int k) {
+        
+        // Time complexity: O(k.2^N), Space complexity: O(N) auxiliary stack space.
+        int size = nums.size();
+        int totSum = 0;
+        
+        for (auto &x : nums) {
+            totSum += x;
+        }
+        if (totSum % k != 0) {
+            return false;
+        }
+        
+        string taken(size, '0');
+        
+//         vector<bool> visited(size, false);
+        
+        unordered_map<string, bool> memo;
+        sort(nums.begin(), nums.end(), comp);
+        
+    
+        return canPartition(nums, k, 0,  0, 0, totSum/k, taken, memo);
+    }
+private:
+    static bool comp(int a, int b) {
+        return a > b;
+    }
+    
+    bool canPartition(vector<int>& nums, int k, int ind, int currSum, int numSubs, int targetSum, string& taken, unordered_map<string, bool>& memo) {
+        // k - 1 subsets found and last subset will have the same sum as well.
+        if (numSubs == k - 1) {
             return true;
         }
         
-        // No need to proceed further.
-        if (currSum > targetSum) { 
+        // If current Sum > required sum, just return false as getting the subset is impossible.
+        if (currSum > targetSum) {
             return false;
         }
         
-        // If we have already computed the current combination.
+        // If the combination of subsets has been taken already
         if (memo.find(taken) != memo.end()) {
             return memo[taken];
         }
-      
-        // When curr sum reaches target then one subset is made.
-        // Increment count and reset current sum.
+        
+        
+        // If the subset sum == target sum, we can start again to search for other subsets (neglecting the already chosen ones)
         if (currSum == targetSum) {
-            return memo[taken] = backtrack(arr, 0, count + 1, 0, k, targetSum, taken, memo);
+            return memo[taken] =  canPartition(nums, k, 0, 0, numSubs + 1, targetSum, taken, memo);
         }
         
-        // Try not picked elements to make some combinations.
-        for (int j = index; j < n; ++j) {
-            if (taken[j] == '0') {
-                // Include this element in current subset.
-                taken[j] = '1';
+        for (int i = ind; i < nums.size(); i++) {
+            
+            // If not explored already
+            if (taken[i] == '0') {
+                taken[i] = '1';
                 
-                // If using current jth element in this subset leads to make all valid subsets.
-                if (backtrack(arr, j + 1, count, currSum + arr[j], k, targetSum, taken, memo)) {
+                // Explore path of taking the current element nums[i] in the subset
+                if (canPartition(nums, k, i + 1, currSum + nums[i], numSubs, targetSum, taken, memo)) {
                     return true;
                 }
                 
-                // Backtrack step.
-                taken[j] = '0';
+                // remove from the subset as it hasn't lead to the result
+                taken[i] = '0';
             }
-        } 
-      
-        // We were not able to make a valid combination after picking each element from the array,
-        // hence we can't make k subsets.
-        return memo[taken] = false;
-    }
-  
-    bool canPartitionKSubsets(vector<int>& arr, int k) {
-        int totalArraySum = 0;
-        int n = arr.size();
-
-        for (int i = 0; i < n; ++i) {
-             totalArraySum += arr[i];
+            
         }
-      
-        // If total sum not divisible by k, we can't make subsets.
-        if (totalArraySum % k != 0) { 
-            return false;
-        }
-      
-        // Sort in decreasing order.
-        sort(arr.begin(), arr.end(), greater<int>());
-        
-        int targetSum = totalArraySum / k;
-        
-        // String to represent taken array.
-        string taken(n, '0');
-        
-        // Memoize the ans using taken element's string as key.
-        unordered_map<string, bool> memo;
-      
-        return backtrack(arr, 0, 0, 0, k, targetSum, taken, memo);
+        return false;
     }
 };
