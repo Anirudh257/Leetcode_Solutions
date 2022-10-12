@@ -2,7 +2,7 @@ class Solution {
 public:
     bool canPartitionKSubsets(vector<int>& nums, int k) {
         
-        // Time complexity: O(N.2^N) combinations of string possible, Space complexity: O(N.2^N) combinations possible in the memo
+        // Time complexity: O(N.2^N) combinations of subsets possible, Space complexity: O(N.2^N) combinations possible in the memo
         int size = nums.size();
         int totSum = 0;
         
