@@ -1,6 +1,7 @@
 class Solution {
 public:
     int rob(vector<int>& nums) {
+        // Time complexity: O(n), Space complexity: O(N)
         int size = nums.size();
         vector<int> dp(size, -1);
         
