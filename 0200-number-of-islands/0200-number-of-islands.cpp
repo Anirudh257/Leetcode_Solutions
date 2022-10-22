@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(mn), Space complexity: O(mn) + Auxiliary space: O(mn)
     int numIslands(vector<vector<char>>& grid) {
         int m = grid.size(), n = grid[0].size();
         vector<vector<bool>> visit(m, vector<bool>(n, false));
