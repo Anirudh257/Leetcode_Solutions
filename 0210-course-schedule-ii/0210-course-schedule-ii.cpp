@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(V + E), Space complexity: O(V + E) for maintaining graph + O(V) for computing indegrees
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         vector<int> ordering;
         graph g = buildGraph(prerequisites, numCourses);
