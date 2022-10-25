@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(N + E), Space complexity: O(N), N = number of nodes, E = number of edges
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         graph g = buildGraph(numCourses, prerequisites);
         
