@@ -5,6 +5,8 @@ class Solution {
         string word;
         node *child[26];
     };
+    
+    // Time complexity: O(NM*NM). Space complexity: O(NM*NM) + O(#words)
     struct node *getNode(char c)    //get newnode
     {
         node *newnode = new node;
