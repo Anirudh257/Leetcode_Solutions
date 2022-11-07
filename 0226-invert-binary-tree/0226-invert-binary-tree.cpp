@@ -9,6 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+// Time complexity: O(N), Space complexity: O(1) + O(N) auxiliary stack space, N = number of nodes
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
