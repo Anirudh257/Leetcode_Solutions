@@ -10,11 +10,9 @@ public:
                 if (abs(i - um[num]) <= k) {
                     return true;
                 }
-                um[nums[i]] = i;
             }
-            else {
-                um[nums[i]] = i;            
-            }
+            um[nums[i]] = i;
+
         }
         return false;
     }
