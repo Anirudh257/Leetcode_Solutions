@@ -1,28 +1,37 @@
 class Solution {
 public:
+    // Time complexity: O(26*26*n), n = len(s), Space complexity: O(26)
     int largestVariance(string s) {
-        int res = 0;
-        unordered_set<char> unique(begin(s), end(s));
-        for (char a : unique) {
-            for (char b : unique) {
-                if (a != b) {
-                    int var = 0, has_b = 0, first_b = 0;
-                    for (auto ch : s) {
-                        var += ch == a;
-                        if (ch == b) {
-                            has_b = true;
-                            if (first_b && var >= 0)
-                                first_b = false;
-                            else if (--var < 0) {
-                                first_b = true;
-                                var = -1;
-                            }
+        int maxVar = 0, var = 0;
+        
+        int len = s.size();
+        
+        unordered_set<char> uniq(s.begin(), s.end());
+        
+        for (char fir : uniq) {
+            for (char sec : uniq) {
+                bool secOcc = false, secFirst = false;
+                int var = 0;
+                
+                for (auto ch : s) {
+                    var += ch == fir;
+                    
+                    if (ch == sec) {
+                        secOcc = true;
+                        
+                        if (secFirst && var >= 0) {
+                            secFirst = false;
                         }
-                        res = max(res, has_b ? var : 0);
-                    }                    
+                        else if (--var < 0) {
+                            var = -1;
+                            secFirst = true;
+                        }
+                        
+                    }
+                    maxVar = max(maxVar, secOcc ? var : 0);
                 }
             }
         }
-        return res;
-    }    
+        return maxVar;
+    }
 };
