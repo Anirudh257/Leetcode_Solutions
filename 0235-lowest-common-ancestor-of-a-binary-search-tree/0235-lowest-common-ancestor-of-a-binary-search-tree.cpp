@@ -8,6 +8,7 @@
  * };
  */
 
+// Time complexity: O(N), Space complexity: O(N), N = number of nodes of a tree
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
