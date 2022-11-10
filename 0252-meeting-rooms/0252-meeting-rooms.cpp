@@ -14,15 +14,13 @@ public:
         int maxEnd = intervals[0][1];
         
         
-        for (int i = 1; i < size; i++) {
-            int currSt = intervals[i][0];
-            int currEnd = intervals[i][1];   
+        for (int i = 0; i < size - 1; i++) {
+            // int currSt = intervals[i][0];
+            // int currEnd = intervals[i][1];   
             
-            if (currSt < maxEnd) {
+            if (intervals[i][1] > intervals[i + 1][0]) {
                 return false;
             }
-            maxSt = min(maxSt, currSt);
-            maxEnd = max(maxEnd, currEnd);
             
         }
         
