@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(nlogn), Space complexity: O(1)
     bool canAttendMeetings(vector<vector<int>>& intervals) {
         int size = intervals.size();
         
