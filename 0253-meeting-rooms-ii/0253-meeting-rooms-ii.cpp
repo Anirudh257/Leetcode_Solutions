@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(nlogn), Space complexity: O(n)
     int minMeetingRooms(vector<vector<int>>& intervals) {
         int size = intervals.size();
         
