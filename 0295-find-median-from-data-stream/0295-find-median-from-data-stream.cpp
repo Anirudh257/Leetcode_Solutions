@@ -1,7 +1,8 @@
 class MedianFinder {
 public:
     MedianFinder() {
-           
+        // Time complexity: O(nlogn), 1 element insertion takes logn time in a binary heap and for n elements, nlogn
+        // Space complexity: O(N) for maintaining heaps
     }
     
     void addNum(int num) {
