@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(N), Space complexity: O(1)
     int missingNumber(vector<int>& nums) {
         int n = nums.size();
         
