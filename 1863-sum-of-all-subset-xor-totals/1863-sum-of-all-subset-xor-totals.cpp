@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(n*2^n), Space complexity: O(2^n)
     int subsetXORSum(vector<int>& nums) {
         int reqSum = 0;
         
