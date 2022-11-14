@@ -7,7 +7,7 @@ static const unordered_map<int, vector<char>> kT9Mapping {{2, {'a', 'b', 'c'}},
                                          {8, {'t', 'u', 'v'}},
                                          {9, {'w', 'x', 'y', 'z'}}};
 
-// Time complexity: O(n*4^n), Space complexity: O(4^n)
+// Time complexity: O(n*4^n), Space complexity: O(4^n) for storing output and O(N) auxiliary stack space
 // Max number of characters per integer can be 4 and max length of path can be 4^n
 class Solution {
 public:
