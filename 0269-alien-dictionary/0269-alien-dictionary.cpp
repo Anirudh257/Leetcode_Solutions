@@ -1,11 +1,13 @@
 #define ALPHALEN 26
 class Solution {
 public:
+    // Time complexity: O(V + E) to compute the indegree map + O(NC) to compare the characters between N pairs of 
+    // words + O(V + E) for topological sort
+    // Space complexity: O(V + E) for building a graph + O(V) for topological sort
     string alienOrder(vector<string>& words) {
         vector<int> adj[ALPHALEN];
         string valOrd = "";
         int n = words.size();
-        // int uniqCh = 0;
         unordered_map<int, int> indeg;
         
         for (auto &x : words) {
@@ -19,11 +21,9 @@ public:
             string a = words[i];
             string b = words[i + 1];
             int len = min(a.length(), b.length());
-            bool fl = false;
             for (int j = 0; j < len; j++) {
                 if (a[j] != b[j]) {
                     adj[a[j] - 'a'].push_back(b[j] - 'a');
-                    fl = true;
                     break;
                 }
                 
@@ -32,20 +32,7 @@ public:
                 }
             }
         }
-        
-//         for (int i = 0; i < 26; i++) {
-//             if (adj[i].size() != 0) {
-//                 char ch = char(i + 'a');
-//                 cout << ch << " -> ";
                 
-//                 for (int k : adj[i]) {
-//                     char ch = char(k + 'a');
-//                     cout << ch << " ";
-//                 }
-//                 cout << endl;
-//             }
-//         }
-        
         valOrd = perfTopSort(adj, indeg);
         
         return valOrd;
