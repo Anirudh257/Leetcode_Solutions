@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findLength(vector<int>& nums1, vector<int>& nums2) {
+        // Time complexity: O(mn), Space complexity: O(mn), m = size(nums1), n = size(nums2)
         int size1 = nums1.size(), size2 = nums2.size();
         vector<vector<int>> dp(size1 + 1, vector<int>(size2 + 1));
         int maxSubLen = 0;
