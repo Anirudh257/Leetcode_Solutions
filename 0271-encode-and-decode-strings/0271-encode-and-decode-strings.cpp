@@ -1,6 +1,6 @@
 class Codec {
 public:
-
+    // Time complexity: O(N), Space complexity: O(N)
     // Encodes a list of strings to a single string.
     string encode(vector<string>& strs) {
         string res = "";
