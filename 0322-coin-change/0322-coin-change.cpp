@@ -1,5 +1,7 @@
 class Solution {
 public:
+    // Time complexity: O(N*T), N = number of coins, T = amount
+    // Space complexity: O(N*T) + Auxiliary space of O(T)
     int coinChange(vector<int>& coins, int amount) {
         vector<vector<int>> dp(coins.size(), vector<int>(amount + 1, -1));
         int res = compCoins(coins, amount, coins.size() - 1, dp);
