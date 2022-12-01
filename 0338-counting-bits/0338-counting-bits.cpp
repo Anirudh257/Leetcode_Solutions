@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(N), Space complexity: O(N)
     vector<int> countBits(int n) {
         if (n == 0) {
             return {0};
