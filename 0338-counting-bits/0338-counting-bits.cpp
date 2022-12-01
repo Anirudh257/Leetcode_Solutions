@@ -20,9 +20,6 @@ public:
             return bits;
         }
         
-        for (int i = 2; i <= n; i=i*2) {
-            bits[i] = 1;
-        }
         
         for(int i = 3; i<= n; i++) {
             if (bits[i] == -1) {
