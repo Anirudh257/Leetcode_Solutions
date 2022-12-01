@@ -26,11 +26,9 @@ public:
         
         for(int i = 3; i<= n; i++) {
             if (bits[i] == -1) {
-                bits[i] = bits[i/2] + bits[i%2];
+                bits[i] = bits[i>>1] + bits[i%2];
             }
         }
-        
-        
         
         return bits;
     }
