@@ -1,5 +1,8 @@
 class Solution {
 public:
+    // Time complexity: O(V + E) to travverse the DFS + O(E) to build adjacency list
+    // Space complexity: O(V + E) to build DFS + O(E) to build visited list
+    
     int countComponents(int n, vector<vector<int>>& edges) {
         // DFS approach
         vector<bool> visited(n, false);
