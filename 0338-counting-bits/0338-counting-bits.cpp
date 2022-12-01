@@ -16,11 +16,6 @@ public:
         bits[1] = 1;
         bits[2] = 1;
         
-        if (n == 1) {
-            return bits;
-        }
-        
-        
         for(int i = 3; i<= n; i++) {
             if (bits[i] == -1) {
                 bits[i] = bits[i>>1] + bits[i%2];
