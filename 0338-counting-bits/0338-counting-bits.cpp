@@ -14,9 +14,7 @@ public:
         bits[0] = 0;
         
         for(int i = 1; i<= n; i++) {
-            // if (bits[i] == -1) {
             bits[i] = bits[i>>1] + i % 2;
-            // }
         }
         
         return bits;
