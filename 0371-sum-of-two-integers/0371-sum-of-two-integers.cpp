@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Time complexity: O(1)
     int getSum(int a, int b) {
         if (a == 0) {
             return b;
