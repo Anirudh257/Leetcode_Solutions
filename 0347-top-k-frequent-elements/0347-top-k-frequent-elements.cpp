@@ -1,12 +1,7 @@
 class Solution {
 public:
-    bool static cmp(int a, int b) {
-        if (a > b) {
-            return false;
-        }
-        return true;
-    }
 
+    // Time complexity: O(n^2)
     vector<int> topKFrequent(vector<int>& nums, int k) {
         // priority_queue<int, vector<int>, cmp> pq;
         unordered_map<int, vector<int>> freqNum;
