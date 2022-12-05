@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    // Time complexity: O(mn*4*word(size)), Space complexity: O(mn)
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
         int m = heights.size(), n = heights[0].size();
         vector<vector<int>> pac(m, vector<int>(n, -1));
