@@ -12,6 +12,7 @@ private:
                 return mid;
             }
             else {
+                // Left half is sorted, apply binary search conditions
                 if (nums[l] <= nums[mid]) {
                     if (target >= nums[l] && target <= nums[mid]) {
                         r = mid - 1;
@@ -20,6 +21,8 @@ private:
                         l = mid + 1;
                     }
                 }
+                // Right half is sorted, apply binary search conditions
+                // One half will be definitely be sorted as the array is rotated sorted.
                 else {
                     if (target >= nums[mid] && target <= nums[r]) {
                         l = mid + 1;
