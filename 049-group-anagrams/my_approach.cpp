@@ -1,4 +1,4 @@
-// Time complexity: O(NlogN), Space complexity: O(N)
+// Time complexity: O(MNlogN), Space complexity: O(M), M = number of strings, N = average length of string
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
