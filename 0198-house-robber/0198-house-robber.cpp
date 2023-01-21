@@ -1,7 +1,7 @@
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        // Time complexity: O(n), Space complexity: O(N)
+        // Time complexity: O(n), Space complexity: O(N) + Auxiliary Stack Space: O(N)
         int size = nums.size();
         vector<int> dp(size, -1);
         
