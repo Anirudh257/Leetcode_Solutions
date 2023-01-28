@@ -1,3 +1,5 @@
+import gc
+
 def printArr(arr):
     print(*arr)
 
@@ -39,6 +41,10 @@ class MergeSort:
             self.mergeSort(left)
             self.mergeSort(right)
             self.merge(left, right, arr)
+
+            del left
+            del right
+            gc.collect()
 
         return
 
