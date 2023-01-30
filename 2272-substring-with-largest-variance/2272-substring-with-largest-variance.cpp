@@ -1,37 +1,36 @@
+// Time complexity: O(26*26*N), Space complexity: O(26)
 class Solution {
 public:
-    // Time complexity: O(26*26*n), n = len(s), Space complexity: O(26)
     int largestVariance(string s) {
-        int maxVar = 0, var = 0;
-        
-        int len = s.size();
-        
-        unordered_set<char> uniq(s.begin(), s.end());
-        
-        for (char fir : uniq) {
-            for (char sec : uniq) {
-                bool secOcc = false, secFirst = false;
-                int var = 0;
-                
-                for (auto ch : s) {
-                    var += ch == fir;
-                    
-                    if (ch == sec) {
-                        secOcc = true;
-                        
-                        if (secFirst && var >= 0) {
-                            secFirst = false;
+        int maxVar = 0, currVar = 0; // For ch1 +1, ch2 -1
+        unordered_set<char> uniqCh(s.begin(), s.end());
+
+        // Check if more than 1 character has occured in the substring
+        bool hasCh2 = false, firstCh2 = false; 
+
+        for (char ch1 : uniqCh) {
+            for (char ch2 : uniqCh) {
+                if (ch1 != ch2) {
+                    currVar = 0, hasCh2 = false, firstCh2 = false;
+                    for (auto ch : s) {
+                        currVar += ch1 == ch;
+                        if (ch == ch2) {
+                            hasCh2 = true;
+                            if (firstCh2 && currVar >= 0) {
+                                firstCh2 = false;
+                            }
+                            // Reinitialize var to 0
+                            else if (--currVar < 0) {
+                                firstCh2 = true;
+                                currVar = -1;
+                            }
                         }
-                        else if (--var < 0) {
-                            var = -1;
-                            secFirst = true;
-                        }
-                        
+                        maxVar = max(maxVar, hasCh2 ? currVar : 0);
                     }
-                    maxVar = max(maxVar, secOcc ? var : 0);
                 }
             }
         }
+
         return maxVar;
     }
 };
