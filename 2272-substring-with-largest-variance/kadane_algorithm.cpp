@@ -1,4 +1,4 @@
-// Time complexity: O(26N), Space complexity: O(1), N = length of string
+// Time complexity: O(26*26*N), Space complexity: O(1), N = length of string
 class Solution {
 public:
     int largestVariance(string s) {
