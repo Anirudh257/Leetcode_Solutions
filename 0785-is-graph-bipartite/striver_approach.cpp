@@ -5,6 +5,7 @@ public:
     bool isBipartite(vector<vector<int>>& graph) {
         // Use BFS logic using queues to color the nodes and keep inserting into queue
         // after color has been done. Adjacent nodes should have 2 different colors.
+        // If no odd-length cycle detected, graph is bipartite
         int n = graph.size();
         return checkBipar(graph, n);
     }
