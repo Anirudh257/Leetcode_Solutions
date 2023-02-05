@@ -9,42 +9,22 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
-
-class cmp{
-public:
-    int operator() (const int &x, const int &y) {
-        return x > y;
-    }    
-};
-
+ // Time complexity: O(N), Space complexity: O(N)
 class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {
-        priority_queue<int, vector<int>, cmp> pq; 
-        
-        dfs(root, pq);
-        
-        while(!pq.empty()) {
-            int ans = pq.top();
-            pq.pop();
-            
-            if (k == 1) {
-                return ans;
-            }
-            k--;
-        }
-        
-        return 0;
-        
+        vector<int> nums;
+        inorder(nums, root);
+
+        return nums[k - 1];
     }
 private:
-    void dfs(TreeNode* root, priority_queue<int, vector<int>, cmp>& pq) {
-        if (!root) {
+    void inorder(vector<int>& nums, TreeNode* node) {
+        if (!node) {
             return;
         }
-        dfs(root->left, pq);
-        pq.push(root->val);
-        dfs(root->right, pq);
+        inorder(nums, node->left);
+        nums.push_back(node->val);
+        inorder(nums, node->right);
     }
 };
