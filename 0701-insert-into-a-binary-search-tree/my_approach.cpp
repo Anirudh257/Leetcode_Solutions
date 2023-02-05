@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    // Time complexity: O(H), Space complexity: O(H), H = N for skewed tree and logN for balanced tree
     TreeNode* insertIntoBST(TreeNode* root, int val) {
         if (!root) {
             TreeNode* newRoot = new TreeNode(val);
