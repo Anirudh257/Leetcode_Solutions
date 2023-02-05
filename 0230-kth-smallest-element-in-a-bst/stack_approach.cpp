@@ -9,7 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// Time complexity: O(N), Space complexity: O(N)
+// Time complexity: O(H + k), Space complexity: O(H)
 class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {
