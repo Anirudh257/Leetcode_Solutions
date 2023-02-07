@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4785632a-8eb0-4a56-a603-1a175b58ac3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/1463-cherry-pickup-II/striver_space_optimized_bottom_up_dp_approach.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subset-sum-equal-to-target/striver_bottom_up_approach.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subset-sum-equal-to-target/striver_space_optimized_bottom_up_approach.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subset-sum-equal-to-target/striver_top_down_approach.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1463-cherry-pickup-II/my_approach.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/1463-cherry-pickup-II/my_approach.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1463-cherry-pickup-II/striver_top_down_dp_approach.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/1463-cherry-pickup-II/striver_top_down_dp_approach.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
