@@ -1,4 +1,4 @@
-// Time complexity: O(mn^2)*9, Space complexity: O(mn^2) + Auxiliary Stack Space: O(m) m = number of rows,
+// Time complexity: O(mn^2)*9, Space complexity: O(mn^2) + Auxiliary Stack Space: O(n) m = number of rows,
 // n = number of columns.
 class Solution {
 public:

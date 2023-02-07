@@ -1,4 +1,5 @@
-// Time complexity: O(mn^2*9) 9 states, Space complexity: O(mn^2) + Auxiliary Stack Space : O(M) M = number of rows, N = number of columns
+// Time complexity: O(mn^2*9) 9 states, Space complexity: O(mn^2) + Auxiliary Stack Space : O(n)
+// m = number of rows, n = number of columns
 class Solution {
 public:
     int cherryPickup(vector<vector<int>>& grid) {
