@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4785632a-8eb0-4a56-a603-1a175b58ac3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/62-unique-paths/my_approach.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/62-unique-paths/striver_bottom_up_approach.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/62-unique-paths/striver_space_optimized_bottom_up_approach.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/62-unique-paths/striver_top_down_approach.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/62-unique-paths/striver_combinatorics_approach.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,16 +30,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/anirudh/Desktop/Anirudh/UCR_Courses/Winter23/CS260_NLP/Project/T2T-Diffu-Summarization-main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/anirudh/Desktop/Anirudh/imp_python_scripts.txt"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Leetcode_Solutions" />
