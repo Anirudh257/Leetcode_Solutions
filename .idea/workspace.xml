@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4785632a-8eb0-4a56-a603-1a175b58ac3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/1595-minimum-cost-to-connect-two-groups-of-points/abrar_dp_bitmask_approach.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImportantCodingConcepts/understanding_bound_functions.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImportantCodingConcepts/understanding_comparator.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/understanding_bound_functions.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/understanding_comparator.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/anirudh/Desktop/Anirudh/Important_coding_concepts/Leetcode_Solutions"
+    "last_opened_file_path": "/home/anirudh/Desktop/Anirudh/UCR_Courses/Winter23/CS260_NLP/Project/T2T-Diffu-Summarization-main"
   }
 }]]></component>
   <component name="RunManager">
