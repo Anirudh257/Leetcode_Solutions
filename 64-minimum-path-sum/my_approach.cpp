@@ -1,4 +1,4 @@
-// Time complexity: O(MN), Space complexity: O(MN) + Auxiliary Space complexity: O(N)
+// Time complexity: O(MN), Space complexity: O(MN) + Auxiliary Space complexity: O(M - 1 + N - 1)
 class Solution {
 public:
     int minPathSum(vector<vector<int>>& grid) {
