@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4785632a-8eb0-4a56-a603-1a175b58ac3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/0120-triangle/my_approach.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0120-triangle/striver_bottom_up_approach.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0120-triangle/striver_space_optimized_bottom_up_approach.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0931-minimum-falling-path-sum/bottom_up_dp_approach.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0931-minimum-falling-path-sum/space_optimized_bottom_up_dp_approach.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/63-unique-paths-ii/optimized_top_down_dp_approach.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/63-unique-paths-ii/optimized_top_down_dp_approach.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/63-unique-paths-ii/top_down_dp_approach.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/63-unique-paths-ii/top_down_dp_approach.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/64-minimum-path-sum/my_approach.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/64-minimum-path-sum/my_approach.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +31,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/anirudh/Desktop/Anirudh/imp_python_scripts.txt&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/anirudh/Desktop/Anirudh/linkedin_message_templates.txt"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Leetcode_Solutions" />
