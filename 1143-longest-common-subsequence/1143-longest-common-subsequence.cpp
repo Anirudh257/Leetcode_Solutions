@@ -1,6 +1,6 @@
 class Solution {
 public:
-    // Time complexity: O(mn), Space complexity: O(mn) + O(n + m) Auxiliary stack space
+    // Time complexity: O(mn), Space complexity: O(mn) + Auxiliary stack space: O(n + m)  
     int longestCommonSubsequence(string text1, string text2) {
         int m = text1.size(), n = text2.size();
         vector<vector<int>> dp(m, vector<int>(n, -1));
