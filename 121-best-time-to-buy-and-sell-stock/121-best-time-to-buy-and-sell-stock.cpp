@@ -1,17 +1,18 @@
+// Time complexity: O(N), Space complexity: O(1)
 class Solution {
 public:
-    // Time complexity: O(N), Space complexity: O(1)
     int maxProfit(vector<int>& prices) {
+        // For each ith day, if sell on this day, check which day from (0, .. ith) can the cost
+        // be minimum
+        int minNow = prices[0], size = prices.size();
         int maxProf = 0;
-        int minVal = prices[0];
-        int size = prices.size();
-            
+
         for (int i = 1; i < size; i++) {
-            int currProf = prices[i] - minVal;
-            maxProf = max(maxProf, currProf);
-            minVal = min(minVal, prices[i]);
+            int cost = prices[i] - minNow;
+            maxProf = max(maxProf, cost);
+            minNow = min(minNow, prices[i]);
         }
-        
+
         return maxProf;
     }
 };
