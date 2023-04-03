@@ -66,8 +66,7 @@ private:
                 if (indeg[neigh] == 0) {
                     q.push(neigh);
                 }
-            }
-            
+            }          
         }
         
         if (valOrd.size() != indeg.size()) {

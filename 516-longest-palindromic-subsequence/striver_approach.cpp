@@ -1,4 +1,4 @@
-// Time complexity: O(M*N), Space complexity: O(M)
+// Time complexity: O(N*N), Space complexity: O(N), N = length(string)
 class Solution {
 public:
     int longestPalindromeSubseq(string s) {
