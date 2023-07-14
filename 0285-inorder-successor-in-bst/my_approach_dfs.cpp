@@ -8,7 +8,7 @@
  * };
  */
 
- // Tree complexity: O(n), n = total number of nodes, Space complexity: O(n) + Auxiliary stack space: O(n)
+ // Tree complexity: O(n) + O(logn) for search, n = total number of nodes, Space complexity: O(n) + Auxiliary stack space: O(n)
 class Solution {
 public:
     TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {
