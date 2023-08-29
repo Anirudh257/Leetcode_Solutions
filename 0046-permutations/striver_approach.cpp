@@ -1,4 +1,4 @@
-// Time complexity: O(n!), Space complexity: O(n) for occur vector, O(n) for perm and Auxiliary Stack space of O(n)
+// Time complexity: O(n*n!), Space complexity: O(n) for occur vector, O(n) for perm and Auxiliary Stack space of O(n)
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {

@@ -1,4 +1,4 @@
-// Time complexity: O(n!), Space complexity: Auxiliary stack space: O(n)
+// Time complexity: O(n*n!), Space complexity: Auxiliary stack space: O(n)
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
