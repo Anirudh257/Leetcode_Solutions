@@ -4,6 +4,7 @@
 using namespace std;
 
 // All operations: erase, insert, find, count take logarithmic time.
+// unordered_set's operations are in O(1) time but worst case: O(n) time.
 
 int main() {
     // Store elements in a sorted and unique order.
