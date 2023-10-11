@@ -27,7 +27,8 @@ vector<int> heapify(vector<int>& arr, int ind, int size) {
 }
 
 int main() {
-    vector<int> arr = {1, 14, 10, 8, 7, 9, 3, 2, 4, 6};
+    // vector<int> arr = {1, 14, 10, 8, 7, 9, 3, 2, 4, 6};
+    vector<int> arr = {4, 3, 1, 7};
     int size = arr.size();
 
 
