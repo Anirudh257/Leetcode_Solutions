@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
-        // Time complexity: O(N), Space complexity: O(1)
+        // Time complexity: O(2N), Space complexity: O(1)
         int size = nums.size(), numZeros = 0, maxConsOnes = 0;
         int l = 0, r = 0;
         
