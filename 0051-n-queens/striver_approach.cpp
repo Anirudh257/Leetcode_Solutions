@@ -1,4 +1,4 @@
-// Time complexity: O(n^3), Space complexity: O(n^2) + Auxiliary Stack Space: O(n)
+// Time complexity: O(n!*n), Space complexity: O(n^2) + Auxiliary Stack Space: O(n)
 class Solution {
 public:
     vector<vector<string>> solveNQueens(int n) {

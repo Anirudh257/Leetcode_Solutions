@@ -3,26 +3,22 @@ class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
         int size = nums.size();
-        vector<int> prev(size + 2, 0), curr(size + 2, 0);
+        // vector<vector<int>> dp(size + 1, vector<int>(size + 1, 0));
+        vector<int> curr(size + 1, 0);
+        vector<int> next(size + 1, 0);
 
-        for (int ind = 1; ind <= size; ind++) {
-            for (int prevInd = 1; prevInd <= size + 1; prevInd++) {
+        for (int ind = size - 1; ind >= 0; ind--) {
+            for (int prevInd = ind -1; prevInd >= -1; prevInd--) {
                 int take = 0, notTake = 0;
-                if (prevInd == size + 1) {
-                    take = 1 + prev[ind];
-                    notTake = prev[prevInd];
+                if (prevInd == -1 || nums[prevInd] < nums[ind]) {
+                    take = 1 + next[ind + 1];
                 }
-                else {
-                    if (nums[ind - 1] < nums[prevInd - 1]) {
-                        take = 1 + prev[ind];
-                    }
-                    notTake = prev[prevInd];
-                }
-                curr[prevInd] = max(take, notTake);
+                notTake = next[prevInd + 1];
+                curr[prevInd + 1] = max(take, notTake); 
             }
-            prev = curr;
+            next = curr;
         }
 
-        return curr[size + 1];
+        return next[-1 + 1];
     }
 };
