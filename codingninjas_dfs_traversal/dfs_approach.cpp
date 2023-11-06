@@ -1,4 +1,6 @@
-// Time complexity: O(V + E), Space complexity: O(V + E)
+// Time complexity: O(V + E), Space complexity: O(V) to store the visited list + Auxiliary Space: O(V)
+// Time complexity: For each node, it goes through the neighbors/degree is covered = 2E for undirected graph.
+
 vector<int> compDFS(int node, vector<bool>& visited, vector<int> graph[], vector<int>& trav) {
     visited[node] = true;
     trav.push_back(node);
