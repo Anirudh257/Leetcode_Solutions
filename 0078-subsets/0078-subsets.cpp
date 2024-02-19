@@ -9,7 +9,7 @@ public:
         for (int num = 0; num < numSubs; num++) {
             vector<int> sub;
             for (int j = 0; j < size; j++) {
-                // pick based on index
+                // pick based on index. Check if jth bit is set or not.
                 if (num & (1 << j)) {
                     sub.push_back(nums[j]);
                 }
