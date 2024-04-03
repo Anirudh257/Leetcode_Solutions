@@ -2,31 +2,29 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
-        // Expanding from centres as number of centres = O(n)
-        // Checking start and end of each substring takes O(n^2)
-        int size = s.length();
-        int st = 0, end = 0;
-        int palLen = 0;
-
-        for (int i = 0; i < size; i++) {
-            // j means the centre-length, 0 for odd and 1 for even-centre
-            for (int j = 0; j <= 1; j++) {
-                int l = i;
-                int r = i + j;
-
-                while(l >= 0 && r < size && s[l] == s[r]) {
+        int len = s.length();
+        int maxPalLen = 0, stPal = 0, curPalLen = 0;
+        
+        for (int i = 0; i < len; i++) {
+            for (int centLen = 0; centLen <= 1; centLen++) {
+                int l = i, r = i + centLen;
+                
+                while(l >= 0 && r < len && s[l] == s[r]) {
                     l--;
                     r++;
                 }
+                
                 l++;
                 r--;
-
-                if (r - l > end - st) {
-                    st = l;
-                    end = r;
+                curPalLen = r - l + 1;
+                if (curPalLen > maxPalLen) {
+                    stPal = l;
+                    maxPalLen = curPalLen;
                 }
             }
         }
-        return s.substr(st, end - st + 1);
+        
+        string sub = s.substr(stPal, maxPalLen);
+        return sub;
     }
 };
