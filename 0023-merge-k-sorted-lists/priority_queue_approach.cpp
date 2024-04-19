@@ -1,4 +1,4 @@
-// Time complexity: O(nlogn), Space complexity: O(nlogn),  n = total_elems in all lists
+// Time complexity: O(nlogn), Space complexity: O(n), n = total number of elements across all lists
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -12,28 +12,24 @@
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        ListNode* merged_list = new ListNode(-1);
-        ListNode* ptr = merged_list;
-        priority_queue<int> pq;
-        
-        for (auto &vec : lists) {
-            ListNode* curr = vec;
-            
+        int numVecs = lists.size();
+        // ListNode* dummy = new ListNode(-1);
+        priority_queue<int, vector<int>, greater<int>> pq;
+
+        for (auto &list: lists) {
+            ListNode* curr = list;
+
             while(curr) {
                 pq.push(curr->val);
                 curr = curr->next;
             }
         }
-        
-        vector<int> sortedElems = sortPQ(pq);
-                
-        for (auto &x: sortedElems) {
-            ListNode* newNode = new ListNode(x);
-            ptr->next = newNode;
-            ptr = ptr->next;
-        }
-        
-        return merged_list->next;
+
+        // printPQ(pq);
+        ListNode* mergedList = sortPQ(pq);
+
+
+        return mergedList;
     }
 private:
     void printPQ(priority_queue<int>& pq) {
@@ -43,19 +39,24 @@ private:
         }
         return;
     }
-    
-    vector<int> sortPQ(priority_queue<int>& pq) {
-        int size = pq.size();
-        vector<int> sortedElems(size, -1);
-        int i = size - 1;
-            
+
+    ListNode* sortPQ(priority_queue<int, vector<int>, greater<int>>& pq) {
+        vector<int> revList;
         while(!pq.empty()) {
-            sortedElems[i] = pq.top();
+            revList.push_back(pq.top());
             pq.pop();
-            i--;
         }
-        
-        return sortedElems;
+        // reverse(revList.begin(), revList.end());
+
+        ListNode* mergedList = new ListNode(-1);
+        ListNode* curr = mergedList;
+
+        for (auto &x : revList) {
+            ListNode* newNode = new ListNode(x);
+            curr->next = newNode;
+            curr = curr->next;
+        } 
+
+        return mergedList->next;
     }
-    
 };
