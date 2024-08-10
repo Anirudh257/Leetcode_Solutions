@@ -1,53 +1,36 @@
+// Time complexity: O(m*n), Space complexity: O(1)
 class Solution {
 public:
-// Time complexity: O(2*m*n), Space complexity: O(1)
     void setZeroes(vector<vector<int>>& matrix) {
-        // int row[n] = {0}; --> matrix[..][0]
-        // int col[m] = {0}; --> matrix[0][..]
+        int col0 = 1, m = matrix.size(), n = matrix[0].size();
 
-        int col0 = 1;
-        int n = matrix.size(), m = matrix[0].size();
+        // Using the first rows/columns as marking locations for 0's
+        // presence.
 
-        // step 1: Traverse the matrix and
-        // mark 1st row & col accordingly:
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+        // Location [0][0] signifies 0th row and 0th column that can
+        // be confusing. So, using col0 for 0th column.
+
+        for (int i = 0; i < m; i++) {
+            if (matrix[i][0] == 0) {
+                col0 = 0;
+            }
+            for (int j = 1; j < n; j++) {
                 if (matrix[i][j] == 0) {
-                    // mark i-th row:
-                    matrix[i][0] = 0;
-
-                    // mark j-th column:
-                    if (j != 0)
-                        matrix[0][j] = 0;
-                    else
-                        col0 = 0;
+                    matrix[i][0] = matrix[0][j] = 0;
                 }
             }
         }
 
-        // Step 2: Mark with 0 from (1,1) to (n-1, m-1):
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < m; j++) {
-                if (matrix[i][j] != 0) {
-                    // check for col & row:
-                    if (matrix[i][0] == 0 || matrix[0][j] == 0) {
-                        matrix[i][j] = 0;
-                    }
+        // Traversing from back to avoid confusion while marking 0s.
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 1; j--) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
                 }
             }
-        }
-
-        //step 3: Finally mark the 1st col & then 1st row:
-        if (matrix[0][0] == 0) {
-            for (int j = 0; j < m; j++) {
-                matrix[0][j] = 0;
-            }
-        }
-        if (col0 == 0) {
-            for (int i = 0; i < n; i++) {
+            if (col0 == 0) {
                 matrix[i][0] = 0;
             }
         }
-
     }
 };
