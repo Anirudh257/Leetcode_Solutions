@@ -15,6 +15,7 @@ public:
         ListNode* slow = head;
         ListNode* fast = head;
 
+        // Take n steps
         for (int i = 0; i < n; i++) {
             fast = fast->next;
         }
@@ -25,6 +26,7 @@ public:
             return tempNode;
         }
 
+       // Reach the node before the node that needs to be deleted.
         while(fast->next != NULL) {
             slow = slow->next;
             fast = fast->next;
