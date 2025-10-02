@@ -1,61 +1,74 @@
-import gc
-
-def printArr(arr):
-    print(*arr)
-
 class MergeSort:
-    def __init__(self):
-        pass
 
-    def merge(self, left, right, arr):
-        n, l_len, r_len = len(arr), len(left), len(right)
-        i, j, k = 0, 0, 0
+    def __init__(self, arr):
+        self.arr = arr
+        print("Array before sorting:")
+        self.print_arr(self.arr)
+        self.size = len(self.arr)
+        self.sort_arr = [-1]*self.size
 
-        while i < l_len and j < r_len:
-            if left[i] < right[j]:
-                arr[k] = left[i]
-                i += 1
-            else:
-                arr[k] = right[j]
-                j += 1
-            k += 1
+    def util_sort(self):
+        self.merge_sort(0, self.size - 1)
 
-        while i < l_len:
-            arr[k] = left[i]
-            i += 1
-            k += 1
-
-        while j < r_len:
-            arr[k] = right[j]
-            j += 1
-            k += 1
+        return self.sort_arr
 
 
-    def mergeSort(self, arr):
-        n = len(arr)
-        if n > 2:
-            mid = n//2
-            left = arr[:mid]
-            right = arr[mid:]
-
-            self.mergeSort(left)
-            self.mergeSort(right)
-            self.merge(left, right, arr)
-
-            del left
-            del right
-            gc.collect()
+    def merge_sort(self, l, h):
+        if l < h:
+            mid = (l + h) // 2
+            self.merge_sort(l, mid)
+            self.merge_sort(mid + 1, h)
+            self.merge_arrs(l,mid, h)
 
         return
+    
+    def merge_arrs(self, l, mid, h):
+        
+        s1 = l
+        e1 = mid
+        s2 = mid + 1
+        e2 = h
+        new_p = l
 
-arr = [2, 4, 5, 8, -1, 0]
+        while s1 <= e1 and s2 <= e2:
+            if self.arr[s1] <= self.arr[s2]:
+                self.sort_arr[new_p] = self.arr[s1]
+                s1 += 1
+            else: 
+                self.sort_arr[new_p] = self.arr[s2]
+                s2 += 1
+            new_p += 1
 
-mSort = MergeSort()
+        while s1 <= e1:
+            self.sort_arr[new_p] = self.arr[s1]
+            s1 += 1
+            new_p += 1
 
-print("Array before sorting")
-printArr(arr)
+        while s2 <= e2:
+            self.sort_arr[new_p] = self.arr[s2]
+            s2 += 1
+            new_p += 1
 
-mSort.mergeSort(arr)
+        # Merge Sorted Halves.
+        for i in range(l, h + 1):
+            self.arr[i] = self.sort_arr[i]
+        
+        return
 
-print("Array after sorting")
-printArr(arr)
+    def print_arr(self, arr):
+        for elem in arr:
+            print(elem)
+        return
+
+def main():
+    # Time complexity: O(n*logn)
+    arr = [9, 8, 7, 5, 6]
+
+    mergeSortObj = MergeSort(arr)
+    sort_arr = mergeSortObj.util_sort()
+
+    print("Array after sorting:")
+    mergeSortObj.print_arr(sort_arr)
+
+if __name__ == "__main__":
+    main()
