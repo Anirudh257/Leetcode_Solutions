@@ -1,28 +1,29 @@
-def printArr(arr):
-    print(*arr)
-
 class InsertionSort:
-    def __init__(self):
-        pass
+    def insertion_sort(self, arr):
 
-    def insSort(self, arr):
-        for i in range(1, len(arr)):
-            val = arr[i]
-            hole = i
-            while hole > 0 and arr[hole - 1] > val:
+        n = len(arr)
+
+        # Assuming that arr[0, ..., j - 1] is sorted.
+        for j in range(1, n):
+            val = arr[j]
+            hole = j 
+            while(hole > 0 and arr[hole - 1] > val):
                 arr[hole] = arr[hole - 1]
-                hole -= 1
+                hole = hole - 1        
             arr[hole] = val
-        return
 
-arr = [2, 4, 5, 8, -1, 0]
+        return arr
+    
+def main():
+    # Time complexity: O(n^2)
+    arr = [9, 8, 7, 5, 6]
 
-iSort = InsertionSort()
+    insertObj = InsertionSort()
+    arr_sort = insertObj.insertion_sort(arr)
 
-print("Array before sorting")
-printArr(arr)
+    print("Array after sorting:\n")
+    for elem in arr_sort:
+        print(elem)
 
-iSort.insSort(arr)
-
-print("Array after sorting")
-printArr(arr)
+if __name__ == "__main__":
+    main()
