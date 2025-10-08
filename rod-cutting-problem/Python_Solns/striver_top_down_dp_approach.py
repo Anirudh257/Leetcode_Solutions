@@ -1,4 +1,4 @@
-# Time complexity: O(n^2), Space complexity: O(n^2)
+# Time complexity: O(n^2), Space complexity: O(n^2) + Auxiliary Space: O(n) [DP]
 
 class Solution:
 
@@ -6,7 +6,7 @@ class Solution:
 
         n = len(price)
 
-        self.dp = [[-1]*(n + 1)]*n
+        self.dp = [[-1 for _ in range(n + 1)] for _ in range(n)]
 
         return self.compMaxRodVal(price, n, n - 1)
 
@@ -26,7 +26,7 @@ class Solution:
 
         # If we decide to cut the current rod length, then we need to cut from the overall rod_len.
 
-        take = 1e-9
+        take = float('-inf')
         rod_len = ind + 1
 
         if rod_len <= rem_rod_len:
@@ -40,7 +40,7 @@ def main():
     price = [1, 5, 8, 9, 10, 17, 17, 20]
     sol = Solution()
 
-    max_rod_val = int(sol.cutRod(price))
+    max_rod_val = sol.cutRod(price)
 
     print("Maximum price possible after cutting the rods is {}".format(max_rod_val))
 
