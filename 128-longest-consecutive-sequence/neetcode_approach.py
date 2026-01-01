@@ -4,7 +4,8 @@ class Solution:
         max_len, curr_len = 0, 0
         num_set = set(nums)
 
-        for n in nums:
+        # Avoid re-iterating through same element
+        for n in num_set:
             pre = n - 1
             
             # No previous number exists, so this is a potential start of sequence.
